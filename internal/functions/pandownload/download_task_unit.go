@@ -548,6 +548,21 @@ func (dtu *DownloadTaskUnit) Run() (result *taskframework.TaskUnitRunResult) {
 		}
 		time.Sleep(1 * time.Second)
 
+
+		// print before sort fileList
+		// fmt.Print("排序前\n")
+		// fmt.Printf("[%s] ----\n%s\n", dtu.taskInfo.Id(), fileList)
+
+		// sort fileList
+		sort.Slice(fileList, func(i, j int) bool {
+			return fileList[i].FileName < fileList[j].FileName
+		})
+
+		// print after sort fileList
+		// fmt.Print("排序后\n")
+		// fmt.Printf("[%s] ----\n%s\n", dtu.taskInfo.Id(), fileList)
+
+
 		// 创建对应的任务进行下载
 		for k := range fileList {
 			fileList[k].Path = path.Join(dtu.FilePanPath, fileList[k].FileName)
