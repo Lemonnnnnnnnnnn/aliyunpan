@@ -101,8 +101,6 @@ github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UV
 github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/stretchr/testify v1.7.0 h1:nwc3DEeHmmLAfoZucVR881uASk0Mfjw8xYJ99tb5CcY=
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
-github.com/tickstep/aliyunpan-api v0.2.3 h1:y/C0xE27O/YWUTmX5k24xjFkdjA99UlfNXuowRFHbIg=
-github.com/tickstep/aliyunpan-api v0.2.3/go.mod h1:UvQgQYMIgA5k1QsfKIVnEJ2h/HqDXIkAb16oookNc8o=
 github.com/tickstep/aliyunpan-api v0.2.4 h1:6YninE4UzYi3AuHunAxLwISoPP3004Cs7M50j0F/ay0=
 github.com/tickstep/aliyunpan-api v0.2.4/go.mod h1:UvQgQYMIgA5k1QsfKIVnEJ2h/HqDXIkAb16oookNc8o=
 github.com/tickstep/bolt v1.3.4 h1:UN1txRsauOfR8a5mUWm5So0ng233PsIMVR5/+3WowCE=
