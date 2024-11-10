@@ -11,7 +11,7 @@ d)
     exit 1
   fi
   # 执行 nohup aliyunpan d [name] 并将日志输出到 ~/tmp/aliyunpan-[name].log
-  nohup aliyunpan d "$2" >~/tmp/aliyunpan-$2.log 2>&1 &
+  nohup aliyunpan d "$2" >~/tmp/aliyunpan-"$2".log 2>&1 &
   echo "Download started for $2. Logs are saved in ~/tmp/aliyunpan-$2.log."
   ;;
 *)
