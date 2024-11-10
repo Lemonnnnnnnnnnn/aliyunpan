@@ -1,3 +1,28 @@
-#! /bin/bash
+#!/bin/bash
 
-fzf | xargs -I {} tail -n 1 {}
+# 使用 fzf 多选文件
+# -m 启用多选模式
+# --preview 预览文件内容
+# --preview-window 设置预览窗口
+selected_files=$(
+  fzf -m \
+    --preview 'tail -n 1 {} | awk "{print substr(\$0, length(\$0)-99)}"'
+)
+
+# 如果没有选择文件则退出
+if [ -z "$selected_files" ]; then
+  echo "未选择任何文件"
+  exit 1
+fi
+
+# 处理每个选中的文件
+echo "$selected_files" | while IFS= read -r file; do
+  # 检查文件是否存在且可读
+  if [ -r "$file" ]; then
+    # 输出文件名和最后一行内容
+    echo -e "\n=== $file ==="
+    tail -n 1 "$file"
+  else
+    echo "无法读取文件: $file"
+  fi
+done
