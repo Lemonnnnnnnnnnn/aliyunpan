@@ -1,0 +1,21 @@
+#!/bin/bash
+
+case "$1" in
+ls)
+  # 执行 aliyunpan ls 命令
+  aliyunpan ls
+  ;;
+d)
+  if [ -z "$2" ]; then
+    echo "Error: Please provide a name for downloading."
+    exit 1
+  fi
+  # 执行 nohup aliyunpan d [name] 并将日志输出到 ~/tmp/aliyunpan-[name].log
+  nohup aliyunpan d "$2" >~/tmp/aliyunpan-$2.log 2>&1 &
+  echo "Download started for $2. Logs are saved in ~/tmp/aliyunpan-$2.log."
+  ;;
+*)
+  echo "Usage: ali {ls|d [name]}"
+  exit 1
+  ;;
+esac

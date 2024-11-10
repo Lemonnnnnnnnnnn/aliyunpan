@@ -1,0 +1,11 @@
+#!/bin/bash
+
+selected_path=$(ali ls | fzf)
+
+if [ -n "$selected_path" ]; then
+  target_item=$(echo "$selected_path" | awk '{for(i=5;i<=NF;i++) printf $i (i==NF?"\n":" ");}' | sed 's/\/$//')
+  echo "$target_item"
+  ali d "$target_item"
+else
+  echo "No selection made."
+fi
